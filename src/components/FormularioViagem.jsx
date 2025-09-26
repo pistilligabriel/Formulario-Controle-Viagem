@@ -92,9 +92,12 @@ export default function FormularioViagem() {
               </Typography>
               <Typography variant="h6">Destino: {viagem.destino}</Typography>
               <Typography variant="h6">
-                Data: {new Date(viagem.dataViagem).toLocaleDateString()}
+                Data: {viagem.dataViagem}
               </Typography>
 
+              <Typography variant="h5" style={{textDecoration: 'underline', marginTop: '20px'}}>
+                Dados de Saída
+              </Typography>
               {/* Km Inicial */}
               <Box mt={2}>
                 <TextField
@@ -107,7 +110,7 @@ export default function FormularioViagem() {
               </Box>
 
               {/* Odômetro Inicial */}
-              <Box mt={2}>
+              <Box mt={5}>
                 <Typography variant="subtitle1">Odômetro Inicial (fotos)</Typography>
                 <input
                   type="file"
@@ -117,7 +120,7 @@ export default function FormularioViagem() {
                     handleFileChange(e, setOdometroInicio, setOdometroInicioPreview)
                   }
                 />
-                <Box display="flex" mt={1} gap={1} flexWrap="wrap">
+                <Box display="flex" mt={4} gap={1} flexWrap="wrap">
                   {odometroInicioPreview.map((src, i) => (
                     <Box key={i} position="relative">
                       <img
@@ -158,6 +161,10 @@ export default function FormularioViagem() {
                 />
               </Box>
 
+              <Typography variant="h5" style={{textDecoration: 'underline', marginTop: '20px'}}>
+                Dados de Chegada
+              </Typography>
+
               {/* Km Final */}
               <Box mt={2}>
                 <TextField
@@ -170,7 +177,7 @@ export default function FormularioViagem() {
               </Box>
 
               {/* Odômetro Final */}
-              <Box mt={2}>
+              <Box mt={5}>
                 <Typography variant="subtitle1">Odômetro Final (fotos)</Typography>
                 <input
                   type="file"
@@ -180,7 +187,7 @@ export default function FormularioViagem() {
                     handleFileChange(e, setOdometroFinal, setOdometroFinalPreview)
                   }
                 />
-                <Box display="flex" mt={1} gap={1} flexWrap="wrap">
+                <Box display="flex" mt={4} gap={1} flexWrap="wrap">
                   {odometroFinalPreview.map((src, i) => (
                     <Box key={i} position="relative">
                       <img
@@ -246,7 +253,7 @@ export default function FormularioViagem() {
               </Box>
 
               {/* Botão Enviar */}
-              <Box mt={3}>
+              <Box mt={5}>
                 <Button
                   variant="contained"
                   color="primary"
