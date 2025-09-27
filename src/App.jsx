@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Rota do formulário do motorista */}
-        <Route path="/form/:id" element={<FormularioViagem />} />
+        <Route path="/viagem/:id" element={<FormularioViagem />} />
       </Routes>
     </BrowserRouter>
   );
