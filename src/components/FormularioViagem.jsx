@@ -30,7 +30,7 @@ export default function FormularioViagem() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/viagem/${id}`)
+      .get(`https://sistema-transporte.up.railway.app/api/viagem/${id}`)
       .then((res) => setViagem(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -62,7 +62,7 @@ export default function FormularioViagem() {
       odometroFinal.forEach((file) => formData.append("odometroFinal", file));
 
       await axios.post(
-        `http://localhost:8080/api/viagem/${id}/checklist`,
+        `https://sistema-transporte.up.railway.app/api/viagem/${id}/checklist`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -76,7 +76,7 @@ export default function FormularioViagem() {
 
   return (
     <Container maxWidth="sm" style={{ marginTop: "2rem" }}>
-      <Card>
+      <Card style={{boxShadow:"0 4px 30px black"}}>
         <CardContent>
           <Typography variant="h4" gutterBottom>
             Checklist da Viagem

@@ -1,0 +1,47 @@
+/* Reset básico e consistente */
+
+/* Remove margens/paddings padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Faz o html, body e root ocuparem 100% da tela */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #5c73d2; /* cor de fundo padrão (troque se quiser) */
+  color: #fff; /* cor padrão do texto */
+}
+
+/* Remove estilos padrões de links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Remove estilo de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Normaliza botões */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Normaliza inputs e selects */
+input, select, textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
