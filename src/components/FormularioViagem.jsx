@@ -30,7 +30,7 @@ export default function FormularioViagem() {
 
   useEffect(() => {
     axios
-      .get(`https://sistema-transporte.up.railway.app/api/viagem/${id}`)
+      .get(`http://sistema-transporte-api.sa-east-1.elasticbeanstalk.com/api/viagem/${id}`)
       .then((res) => setViagem(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -62,7 +62,7 @@ export default function FormularioViagem() {
       odometroFinal.forEach((file) => formData.append("odometroFinal", file));
 
       await axios.post(
-        `https://sistema-transporte.up.railway.app/api/viagem/${id}/checklist`,
+        `http://sistema-transporte-api.sa-east-1.elasticbeanstalk.com/api/viagem/${id}/checklist`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
