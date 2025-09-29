@@ -29,11 +29,16 @@ export default function FormularioViagem() {
   const [observacoes, setObservacoes] = useState("");
 
   useEffect(() => {
-    axios
-      .get(`https://88qt8k34gc.execute-api.sa-east-1.amazonaws.com/prod/viagem/${id}`)
-      .then((res) => setViagem(res.data))
-      .catch((err) => console.error(err));
-  }, [id]);
+  axios
+    .get(`https://88qt8k34gc.execute-api.sa-east-1.amazonaws.com/prod/viagem/${id}`)
+    .then((res) => setViagem(res.data))
+    .catch((err) => {
+      console.error("Erro Axios:", err);
+      if (err.response) {
+        console.error("Response data:", err.response.data);
+      }
+    });
+}, [id]);
 
   const handleFileChange = (e, setState, setPreview) => {
     const files = Array.from(e.target.files).slice(0, 5); // limite de 5 fotos
